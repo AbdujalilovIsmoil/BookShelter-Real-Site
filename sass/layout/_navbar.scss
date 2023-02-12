@@ -1,0 +1,108 @@
+.bg-wrapper {
+  background-color: rgba(0, 0, 0, 0.6);
+  min-height: 100vh;
+  width: 100%;
+  position: fixed;
+  left: 100%;
+  z-index: 1;
+  transition: all .3s linear;
+  -webkit-transition: all .3s linear;
+  -moz-transition: all .3s linear;
+  -ms-transition: all .3s linear;
+  -o-transition: all .3s linear;
+
+  &.active {
+    transition: all .3s linear;
+    -webkit-transition: all .3s linear;
+    -moz-transition: all .3s linear;
+    -ms-transition: all .3s linear;
+    -o-transition: all .3s linear;
+    left: 0;
+  }
+
+  .navbar {
+    min-height: 100vh;
+    width: 30%;
+    overflow: auto;
+
+    &::-webkit-scrollbar {
+      background-color: $search-btn-color;
+      width: 10px;
+
+      margin: {
+        top: 10px;
+      }
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background-color: $btn-content-bg-color;
+      border-radius: 10px;
+      -webkit-border-radius: 10px;
+      -moz-border-radius: 10px;
+      -ms-border-radius: 10px;
+      -o-border-radius: 10px;
+    }
+
+    &-container {
+      position: absolute;
+      top: 10px;
+
+      min-height: 100vh;
+
+      &-content {
+        margin: {
+          top: 50px;
+        }
+
+        &__times {
+          position: absolute;
+          left: 340px;
+          font-size: 20px;
+          top: 20px;
+          cursor: pointer;
+        }
+
+        &__title {
+          font-weight: 600;
+          font-size: 24px;
+          line-height: 28px;
+        }
+
+        &__text {
+          font-weight: 600;
+          font-size: 14px;
+          line-height: 155.6%;
+          max-width: 220px;
+        }
+      }
+
+      &-card {
+        border-radius: 4px;
+        background-color: $input-border-color;
+
+        padding: {
+          left: 10px;
+          right: 10px;
+          top: 15px;
+          bottom: 15px;
+        }
+
+        &-box {
+          &__title {
+            font-weight: 600;
+            font-size: 16px;
+            line-height: 19px;
+          }
+
+          &__book {
+            cursor: pointer;
+          }
+
+          &__delete {
+            cursor: pointer;
+          }
+        }
+      }
+    }
+  }
+}
