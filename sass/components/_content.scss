@@ -1,0 +1,43 @@
+.wrapper {
+  margin: {
+    top: 2px;
+  }
+  .result {
+    &__title {
+      font-family: 'Rubik';
+      font-weight: 500;
+      line-height: 17px;
+
+    }
+
+    &-btn {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 10px;
+      background-color: $btn-content-bg-color;
+      border: 1px solid transparent;
+      border-radius: 4px;
+
+      padding: {
+        left: 16px;
+        right: 16px;
+      }
+
+      .fa-calendar {
+        font-size: 20px;
+      }
+
+      &__text {
+        margin: {
+          top: 17px;
+        }
+
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 17px;
+        font-family: 'Rubik';
+      }
+    }
+  }
+}
