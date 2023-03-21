@@ -26,8 +26,8 @@ const index = () => {
                 />
               </label>
             </form>
-            <div className="nav-contact align-items-center gap-4 d-xxl-flex d-xl-flex d-lg-none d-md-none d-sm-block d-block mx-xxl-0 mx-xl-0 mx-lg-0 mx-md-0-auto mx-sm-auto mx-auto text-xxl-0-end text-xl-0-end text-lg-end text-md-end text-sm-center text-center mt-xxl-0 mt-xl-0 mt-lg-0 mt-md-0 mt-sm-3 mt-3">
-              <i className="fa fa-sun nav-contact__sun d-block mb-xxl-0 mb-xl-0 mb-lg-0 mb-md-0 mb-sm-2 mb-2"></i>
+            <div className="nav-contact align-items-center gap-4 d-xxl-flex d-xl-flex d-lg-block d-md-block d-sm-block d-block mx-xxl-0 mx-xl-0 mx-lg-auto mx-md-auto mx-sm-auto mx-auto text-xxl-end text-xl-end text-lg-center text-md-center text-sm-center text-center mt-xxl-0 mt-xl-0 mt-lg-0 mt-md-3 mt-sm-3 mt-3">
+              <i className="fa fa-sun nav-contact__sun d-block mb-xxl-0 mb-xl-0 mb-lg-2 mb-md-2 mb-sm-2 mb-2"></i>
               <button
                 type="button"
                 className="nav-contact__btn btn btn-info text-light shadow-sm"

@@ -85,11 +85,13 @@ $search-btn-color: #0D75FF;
 }
 
 @media only screen and (max-width: 975px) {
-  .nav {
-    &-form {
-      &-label {
-        &__search {
-          width: 570px;
+  .header {
+    .nav {
+      &-form {
+        &-label {
+          &__search {
+            width: 570px;
+          }
         }
       }
     }
@@ -97,11 +99,13 @@ $search-btn-color: #0D75FF;
 }
 
 @media only screen and (max-width: 870px) {
-  .nav {
-    &-form {
-      &-label {
-        &__search {
-          width: 470px;
+  .header {
+    .nav {
+      &-form {
+        &-label {
+          &__search {
+            width: 470px;
+          }
         }
       }
     }
@@ -109,56 +113,87 @@ $search-btn-color: #0D75FF;
 }
 
 @media only screen and (max-width: 770px) {
-  .nav {
-    &-link {
-      &__intro {
-        object-fit: cover;
-        height: 35px;
+  .header {
+    .nav {
+      &-link {
+        &__intro {
+          object-fit: cover;
+          height: 35px;
+        }
       }
     }
   }
 }
 
 @media only screen and (max-width: 725px) {
-  .nav {
-    &-form {
-      &-label {
-        &__search {
-          width: 400px;
+  .header {
+    .nav {
+      &-form {
+        &-label {
+          &__search {
+            width: 400px;
+          }
         }
       }
     }
-  }
-}
-
-@media only screen and (max-width: 655px) {
-  .container {
-    padding: 0 10px !important;
   }
 }
 
 @media only screen and (max-width: 635px) {
-  .nav {
-    &-link {
-      &__intro {
-        object-fit: cover;
-        height: 30px;
+  .header {
+    .nav {
+      &-link {
+        &__intro {
+          object-fit: cover;
+          height: 30px;
+        }
+      }
+
+      &-form {
+        &-label {
+          &__icon {
+            top: 12px;
+            font-size: 18px;
+          }
+
+          &__search {
+            width: 350px;
+
+            padding: {
+              top: 10px;
+              bottom: 10px;
+            }
+          }
+        }
       }
     }
+  }
+}
 
-    &-form {
-      &-label {
-        &__icon {
-          top: 12px;
-          font-size: 18px;
+@media only screen and (max-width: 560px) {
+  .header {
+    .nav {
+      &-link {
+        &__intro {
+          object-fit: cover;
+          height: 30px;
         }
+      }
 
-        &__search {
-          width: 300px;
+      &-form {
+        &-label {
+          &__icon {
+            top: 12px;
+            font-size: 18px;
+          }
 
-          padding: {
-            top: 10px;
-            bottom: 10px;
+          &__search {
+            width: 300px;
+
+            padding: {
+              top: 10px;
+              bottom: 10px;
+            }
           }
         }
       }
@@ -171,74 +206,80 @@ $search-btn-color: #0D75FF;
     padding: 0 5px !important;
   }
 
-  .nav {
-    &-link {
-      &__intro {
-        object-fit: cover;
-        height: 27px;
-      }
-    }
-
-    &-form {
-      &-label {
-        &__search {
-          width: 250px;
-          top: 8px;
-          bottom: 8px;
+  .header {
+    .nav {
+      &-link {
+        &__intro {
+          object-fit: cover;
+          height: 27px;
         }
       }
-    }
-  }
-}
-
-@media only screen and (max-width: 431px) {
-  .nav {
-    &-link {
-      &__intro {
-        object-fit: contain;
-        height: 25px;
-      }
-    }
-
-    &-form {
-      &-label {
-        &__search {
-          width: 200px;
-          top: 8px;
-          bottom: 8px;
-        }
-      }
-    }
-  }
-}
-
-
-@media only screen and (max-width: 371px) {
-  .nav {
-    &-link {
-      margin: 0 auto;
-
-      &__intro {
-        height: 30px;
-        object-fit: cover;
-      }
-    }
-
-    &-form {
-      width: 100%;
-      text-align: center;
-
-      &-label {
-        &__icon {
-          top: 27px;
-        }
-
-        &__search {
-          margin: {
-            top: 15px;
+  
+      &-form {
+        &-label {
+          &__search {
+            width: 250px;
+            top: 8px;
+            bottom: 8px;
           }
+        }
+      }
+    }
+  }
+}
 
-          width: 300px;
+@media only screen and (max-width: 442px) {
+  .header {
+    .nav {
+      &-link {
+        &__intro {
+          object-fit: contain;
+          height: 25px;
+        }
+      }
+  
+      &-form {
+        &-label {
+          &__search {
+            width: 200px;
+            top: 8px;
+            bottom: 8px;
+          }
+        }
+      }
+    }
+  }
+}
+
+
+@media only screen and (max-width: 382px) {
+  .header {
+    .nav {
+      &-link {
+        margin: 0 auto;
+  
+        &__intro {
+          height: 30px;
+          object-fit: cover;
+        }
+      }
+  
+      &-form {
+        width: 100%;
+        text-align: center;
+  
+        &-label {
+          &__icon {
+            top: 27px;
+          }
+  
+          &__search {
+            margin: {
+              top: 15px;
+            }
+  
+            width: 300px;
+          }
         }
       }
     }

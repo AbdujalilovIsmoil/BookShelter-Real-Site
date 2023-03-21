@@ -15,3 +15,10 @@ $btn-primary-color: #75828A;
   max-width: 1440px !important;
   overflow: hidden;
 }
+
+@media only screen and (max-width: 655px) {
+  .container {
+    padding: 0 10px !important;
+  }
+}
+

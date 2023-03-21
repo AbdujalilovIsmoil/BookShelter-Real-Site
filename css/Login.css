@@ -1,0 +1,66 @@
+.login {
+  background-image: url("../../assets/images/jpg/bg/bg.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: stretch;
+  flex-direction: row;
+  width: 100%;
+}
+.login-container {
+  width: 25%;
+  margin: 0 auto;
+}
+.login-container-link__img {
+  height: 44px;
+}
+.login-container-form__input {
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 20px;
+  text-indent: 30px;
+  padding-top: 12px;
+  padding-bottom: 12px;
+}
+.login-container-form__input::placeholder {
+  color: #FFFFFF;
+  text-transform: uppercase;
+}
+.login-container-form i {
+  position: absolute;
+  top: 12.5px;
+  left: 10px;
+  z-index: 1;
+}
+.login-container-form__btn {
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 20px;
+  color: #0D75FF;
+  padding-top: 12px;
+  padding-bottom: 12px;
+}
+.login-container-form__text {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 20px;
+}
+
+@media only screen and (max-width: 1000px) {
+  .login-container {
+    width: 50%;
+  }
+}
+@media only screen and (max-width: 700px) {
+  .login-container {
+    width: 75%;
+  }
+}
+@media only screen and (max-width: 500px) {
+  .login-container {
+    width: 100%;
+  }
+}/*# sourceMappingURL=Login.css.map */
