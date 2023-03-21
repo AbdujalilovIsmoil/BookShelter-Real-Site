@@ -26,7 +26,7 @@ $input-border-color: #F8FAFD;
 
   .navbar {
     min-height: 100vh;
-    width: 30%;
+    width: 50%;
     overflow: auto;
 
     &::-webkit-scrollbar {
@@ -60,7 +60,7 @@ $input-border-color: #F8FAFD;
 
         &__times {
           position: absolute;
-          left: 340px;
+          right: -170%;
           font-size: 20px;
           top: 20px;
           cursor: pointer;
@@ -108,6 +108,245 @@ $input-border-color: #F8FAFD;
             margin: {
               left: 10px;
             }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 1290px) {
+  .bg-wrapper {
+    .navbar {
+      &-container {
+        &-content {
+          &__times {
+            right: -160%;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 1240px) {
+  .bg-wrapper {
+    .navbar {
+      &-container {
+        &-content {
+          &__times {
+            right: -150%;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 1190px) {
+  .bg-wrapper {
+    .navbar {
+      &-container {
+        &-content {
+          &__times {
+            right: -140%;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 1140px) {
+  .bg-wrapper {
+    .navbar {
+      &-container {
+        &-content {
+          &__times {
+            right: -130%;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 1090px) {
+  .bg-wrapper {
+    .navbar {
+      &-container {
+        &-content {
+          &__times {
+            right: -120%;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 1060px) {
+  .bg-wrapper {
+    .navbar {
+      &-container {
+        &-content {
+          &__times {
+            right: -100%;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 960px) {
+  .bg-wrapper {
+    .navbar {
+      &-container {
+        &-content {
+          &__times {
+            right: -80%;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 880px) {
+  .bg-wrapper {
+    .navbar {
+      &-container {
+        &-content {
+          &__times {
+            right: -60%;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 790px) {
+  .bg-wrapper {
+    .navbar {
+      &-container {
+        &-content {
+          &__times {
+            right: -40%;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 720px) {
+  .bg-wrapper {
+    .navbar {
+      &-container {
+        &-content {
+          &__times {
+            right: -20%;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .bg-wrapper {
+    .navbar {
+      width: 100%;
+      &-container {
+        &-content {
+          &__times {
+            right: -150%;
+          }
+        }
+      }
+    }
+  }
+}
+@media only screen and (max-width: 580px) {
+  .bg-wrapper {
+    .navbar {
+      width: 100%;
+      &-container {
+        &-content {
+          &__times {
+            right: -130%;
+          }
+        }
+      }
+    }
+  }
+}
+@media only screen and (max-width: 540px) {
+  .bg-wrapper {
+    .navbar {
+      width: 100%;
+      &-container {
+        &-content {
+          &__times {
+            right: -110%;
+          }
+        }
+      }
+    }
+  }
+}
+@media only screen and (max-width: 500px) {
+  .bg-wrapper {
+    .navbar {
+      width: 100%;
+      &-container {
+        &-content {
+          &__times {
+            right: -90%;
+          }
+        }
+      }
+    }
+  }
+}
+@media only screen and (max-width: 450px) {
+  .bg-wrapper {
+    .navbar {
+      width: 100%;
+      &-container {
+        &-content {
+          &__times {
+            right: -80%;
+          }
+        }
+      }
+    }
+  }
+}
+@media only screen and (max-width: 430px) {
+  .bg-wrapper {
+    .navbar {
+      width: 100%;
+      &-container {
+        &-content {
+          &__times {
+            right: -60%;
+          }
+        }
+      }
+    }
+  }
+}
+@media only screen and (max-width: 390px) {
+  .bg-wrapper {
+    .navbar {
+      width: 100%;
+      &-container {
+        &-content {
+          &__times {
+            right: -45%;
           }
         }
       }
