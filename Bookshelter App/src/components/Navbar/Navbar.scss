@@ -1,3 +1,7 @@
+$search-btn-color: #0D75FF;
+$btn-content-bg-color: #A6B0C3;
+$input-border-color: #F8FAFD;
+
 .bg-wrapper {
   background-color: rgba(0, 0, 0, 0.6);
   min-height: 100vh;
@@ -100,6 +104,10 @@
 
           &__delete {
             cursor: pointer;
+
+            margin: {
+              left: 10px;
+            }
           }
         }
       }

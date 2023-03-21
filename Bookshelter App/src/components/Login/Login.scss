@@ -1,0 +1,100 @@
+@mixin flexbox($flex, $jc, $ai, $gap, $fd) {
+  display: $flex;
+  justify-content: $jc;
+  align-items: $ai;
+  gap: $gap;
+  flex-direction: $fd;
+}
+
+$placeholder-color: #FFFFFF;
+$btn-color: #0D75FF;
+
+.login {
+  background-image: url("../../assets/images/jpg/bg/bg.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 100vh;
+  @include flexbox(flex, center, center, stretch, row);
+  width: 100%;
+
+  &-container {
+    width: 25%;
+
+    &-link {
+      &__img {
+        height: 44px;
+      }
+    }
+
+    margin: 0 auto;
+
+    &-form {
+      &__input {
+        font-weight: 300;
+        font-size: 14px;
+        line-height: 20px;
+        text-indent: 30px;
+
+        padding: {
+          top: 12px;
+          bottom: 12px;
+        }
+
+        &::placeholder {
+          color: $placeholder-color;
+          text-transform: uppercase;
+
+        }
+      }
+
+      i {
+        position: absolute;
+        top: 12.5px;
+        left: 10px;
+        z-index: 1;
+      }
+
+      &__btn {
+        font-weight: 600;
+        font-size: 16px;
+        line-height: 20px;
+        color: $btn-color;
+
+        padding: {
+          top: 12px;
+          bottom: 12px;
+        }
+      }
+
+      &__text {
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 20px;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 1000px) {
+  .login {
+    &-container {
+      width: 50%;
+    }
+  }
+}
+
+@media only screen and (max-width: 700px) {
+  .login {
+    &-container {
+      width: 75%;
+    }
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .login {
+    &-container {
+      width: 100%;
+    }
+  }
+}
