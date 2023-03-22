@@ -1,15 +1,28 @@
 import React from "react";
-import { Header, Main, Section, Navbar, Login } from "./components";
 import "./index.scss";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import RouterLayout from "./components/RouterLayout";
+import { Login } from "./components";
+
+const router = createBrowserRouter([
+  {
+    children: [
+      {
+        path: "/admin",
+        element: <RouterLayout />
+      },
+      {
+        path: "/",
+        element: <Login />
+      }
+    ]
+  }
+]);
 
 const App = () => {
   return (
     <>
-      {/* <Login /> */}
-      <Navbar />
-      <Header />
-      <Main />
-      <Section />
+      <RouterProvider router={router} />
     </>
   );
 };
