@@ -1,35 +1,53 @@
-import React from "react";
+import { useEffect } from "react";
 import "./Login.scss";
 import LoginLogo from "../../assets/images/svg/login-logo/login-logo.svg";
 import { useSelector, useDispatch } from "react-redux";
 import { Input, Button } from "../../UI/index";
-import { USERNAME, PASSWORD, CLEAR_INPUT } from "../action";
-import { useNavigate } from "react-router-dom";
+import { EMAIL, PASSWORD, CLEAR_INPUT } from "../action";
+import { useNavigate, Link } from "react-router-dom";
 
 const index = () => {
-  const { username, password } = useSelector((state) => state);
+  const { email, password } = useSelector((state) => state);
   const dispatch = useDispatch();
   const navigate = useNavigate();
+  const getLocalStorageValues =
+    JSON.parse(localStorage.getItem("registration")) || [];
 
+  if (
+    !getLocalStorageValues.username ||
+    !getLocalStorageValues.password ||
+    !getLocalStorageValues.email
+  ) {
+    useEffect(() => {
+      navigate("/registration");
+    }, []);
+  }
 
   const addToRegistration = (e) => {
     e.preventDefault();
     const user = {
-      username: username.trim().length !== 0,
+      email: email.trim().length !== 0,
       password: password.trim().length !== 0
     };
 
     const userValues = {
-      username: username,
+      email: email,
       password: password
     };
 
-    if (user.username && user.password) {
-      navigate("/admin");
-      dispatch(CLEAR_INPUT());
-      localStorage.setItem("user", JSON.stringify(userValues));
+    if (user.email && user.password) {
+      if (
+        userValues.email === getLocalStorageValues.email &&
+        userValues.password === getLocalStorageValues.password
+      ) {
+        navigate("/");
+        dispatch(CLEAR_INPUT());
+        localStorage.setItem("login", JSON.stringify(userValues));
+      }else {
+        alert("NOT FOUND");
+      }
     } else {
-      alert("No Correct");
+      alert("Login is not filled");
     }
   };
 
@@ -38,29 +56,30 @@ const index = () => {
       <section className="login">
         <div className="container">
           <div className="login-container">
-            <a className="login-container-link" href="#" target="_blank">
+            <Link className="login-container-link" to="/">
               <img
                 src={LoginLogo}
                 alt="login-logo"
                 title="login-logo"
                 className="login-container-link__img"
               />
-            </a>
+            </Link>
             <form
               className="login-container-form mt-5"
               onSubmit={(e) => addToRegistration(e)}
             >
-              <label htmlFor="#" className="w-100 position-relative">
+              <label className="w-100 position-relative">
                 <Input
-                  type="text"
+                  type="email"
                   className="login-container-form__input form-control bg-transparent border border-1 text-light w-100"
-                  placeholder="Username"
-                  value={username}
-                  onChange={(e) => dispatch(USERNAME(e.target.value))}
+                  placeholder="email"
+                  value={email}
+                  onChange={(e) => dispatch(EMAIL(e.target.value))}
+                  required
                 />
                 <i className="far fa-user text-light fs-5"></i>
               </label>
-              <label htmlFor="#" className="w-100 position-relative my-3">
+              <label className="w-100 position-relative my-3">
                 <Input
                   type="password"
                   className="login-container-form__input form-control bg-transparent border border-1 text-light w-100"

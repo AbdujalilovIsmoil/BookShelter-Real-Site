@@ -1,6 +1,7 @@
 const initialState = {
   username: "",
-  password: ""
+  password: "",
+  email: ""
 };
 
 export const reducer = (state = initialState, action) => {
@@ -19,7 +20,13 @@ export const reducer = (state = initialState, action) => {
       return {
         ...state,
         username: "",
-        password: ""
+        password: "",
+        email: ""
+      };
+    case "EMAIL":
+      return {
+        ...state,
+        email: action.payload
       };
     default:
       return state;

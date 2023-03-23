@@ -12,6 +12,13 @@ export const PASSWORD = (value) => {
   };
 };
 
+export const EMAIL = (value) => {
+  return {
+    type: "EMAIL",
+    payload: value
+  };
+};
+
 export const CLEAR_INPUT = () => {
   return {
     type: "CLEAR_INPUT"

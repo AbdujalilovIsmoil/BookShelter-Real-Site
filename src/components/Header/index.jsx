@@ -1,21 +1,29 @@
 import React from "react";
 import "./Header.scss";
 import Logo from "../../assets/images/svg/intro/intro.svg";
+import { useNavigate, Link } from "react-router-dom";
 
 const index = () => {
+  const navigate = useNavigate();
+
+  const logoutFunction = () => {
+    navigate("/registration");
+    localStorage.clear();
+  };
+
   return (
     <>
       <header className="header bg-light">
         <div className="container">
           <nav className="nav d-flex justify-content-between align-items-center py-3 w-100">
-            <a href="./index.html" className="nav-link">
+            <Link to="/" className="nav-link">
               <img
                 src={Logo}
                 alt="BookShelter"
                 title="BookShelter"
                 className="nav-link__intro"
               />
-            </a>
+            </Link>
             <form className="nav-form">
               <label htmlFor="#" className="nav-form-label">
                 <i className="nav-form-label__icon fa fa-search"></i>
@@ -31,6 +39,7 @@ const index = () => {
               <button
                 type="button"
                 className="nav-contact__btn btn btn-info text-light shadow-sm"
+                onClick={logoutFunction}
               >
                 Logout
               </button>

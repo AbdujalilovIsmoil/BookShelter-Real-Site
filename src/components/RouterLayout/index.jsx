@@ -4,13 +4,21 @@ import { Outlet } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 
 const index = () => {
-  const getLocal = JSON.parse(localStorage.getItem("user")) || [];
+  const getRegistrationValues =
+    JSON.parse(localStorage.getItem("registration")) || [];
+  const getLoginValues = JSON.parse(localStorage.getItem("login")) || [];
   const navigate = useNavigate();
 
-  if (!getLocal.username && !getLocal.password) {
+  if (!getRegistrationValues.username && !getRegistrationValues.password) {
     useEffect(() => {
-      navigate("/");
-    },[]);
+      navigate("/registration");
+    }, []);
+  }
+
+  if (!getLoginValues.email && !getLoginValues.password) {
+    useEffect(() => {
+      navigate("/login");
+    }, []);
   }
 
   return (
