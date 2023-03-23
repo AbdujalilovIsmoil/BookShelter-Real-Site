@@ -43,7 +43,7 @@ const index = () => {
         navigate("/");
         dispatch(CLEAR_INPUT());
         localStorage.setItem("login", JSON.stringify(userValues));
-      }else {
+      } else {
         alert("NOT FOUND");
       }
     } else {
