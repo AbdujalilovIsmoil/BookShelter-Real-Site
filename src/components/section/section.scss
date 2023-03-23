@@ -66,6 +66,11 @@ $card-text-color: #757881;
           font-weight: 1000;
           font-size: 13px !important;
           line-height: 17px;
+
+          margin: {
+            left: 2.5px;
+            right: 2.5px;
+          }
         }
 
         &__info {

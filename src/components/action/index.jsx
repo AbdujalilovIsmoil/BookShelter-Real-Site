@@ -45,3 +45,24 @@ export const LOADER = (value) => {
     payload: value
   };
 };
+
+export const OPEN_MODAL = (value) => {
+  return {
+    type: "OPEN_MODAL",
+    payload: value
+  };
+};
+
+export const CLOSE_MODAL = (value) => {
+  return {
+    type: "CLOSE_MODAL",
+    payload: value
+  };
+};
+
+export const ALL_BOOKS = (value) => {
+  return {
+    type: "ALL_BOOKS",
+    payload: value
+  };
+};

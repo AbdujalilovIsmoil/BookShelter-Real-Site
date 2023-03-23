@@ -2,16 +2,29 @@ import React from "react";
 import "./Navbar.scss";
 import BookIcon from "../../assets/images/svg/navbar-icons/book.svg";
 import DeleteIcon from "../../assets/images/svg/navbar-icons/delete.svg";
+import { useSelector, useDispatch } from "react-redux";
+import { CLOSE_MODAL } from "../action";
 
 const index = () => {
+  const { modal } = useSelector((state) => state);
+  const dispatch = useDispatch();
+  let classNames = "bg-wrapper";
+
+  if (modal) {
+    classNames += " active";
+  } else {
+    classNames += " ";
+  }
+
   return (
     <>
-      <div className="bg-wrapper">
+      <div className={classNames}>
         <section className="navbar bg-light">
           <div className="container">
             <div className="navbar-container bg-light">
               <div className="navbar-container-content">
                 <i
+                  onClick={() => dispatch(CLOSE_MODAL(false))}
                   className="navbar-container-content__times fa fa-times"
                   id="closeNavbar"
                 ></i>

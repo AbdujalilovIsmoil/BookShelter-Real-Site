@@ -7,7 +7,7 @@ import { SEARCH_INPUT, SEARCH_DATA, LOADER } from "../action";
 
 const index = () => {
   const navigate = useNavigate();
-  const { search, data } = useSelector((state) => state);
+  const { search } = useSelector((state) => state);
   const dispatch = useDispatch();
   const logoutFunction = () => {
     navigate("/registration");

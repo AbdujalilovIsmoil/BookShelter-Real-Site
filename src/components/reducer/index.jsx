@@ -2,9 +2,11 @@ const initialState = {
   username: "",
   password: "",
   email: "",
-  search: "Alisher Navoiy",
+  search: "panda",
   data: [],
-  loader: true
+  loader: true,
+  modal: false,
+  books: []
 };
 
 export const reducer = (state = initialState, action) => {
@@ -45,6 +47,21 @@ export const reducer = (state = initialState, action) => {
       return {
         ...state,
         loader: action.payload
+      };
+    case "OPEN_MODAL":
+      return {
+        ...state,
+        modal: action.payload
+      };
+    case "CLOSE_MODAL":
+      return {
+        ...state,
+        modal: action.payload
+      };
+    case "ALL_BOOKS":
+      return {
+        ...state,
+        books: [...state.books, action.payload]
       };
     default:
       return state;
