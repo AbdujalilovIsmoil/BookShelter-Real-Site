@@ -58,18 +58,16 @@ const index = () => {
                     <div className="read-about-box">
                       <p className="read-about-box__key">Author:</p>
                       <div className="read-about-box-values">
-                        {volumeInfo?.authors?.length ? (
-                          volumeInfo?.authors?.map((el) => (
-                            <p
-                              className="read-about-box-values__value"
-                              key={el}
-                            >
-                              {el}
-                            </p>
-                          ))
-                        ) : (
-                          <h1>NOT AUTHOR</h1>
-                        )}
+                        {volumeInfo?.authors?.length
+                          ? volumeInfo?.authors?.map((el) => (
+                              <p
+                                className="read-about-box-values__value"
+                                key={el}
+                              >
+                                {el}
+                              </p>
+                            ))
+                          : "NOT AUTHOR"}
                       </div>
                     </div>
                     <div className="read-about-box">
@@ -95,18 +93,16 @@ const index = () => {
                     <div className="read-about-box">
                       <p className="read-about-box__key">Categories: </p>
                       <div className="read-about-box-values">
-                        {volumeInfo?.categories?.length ? (
-                          volumeInfo?.categories?.map((el) => (
-                            <p
-                              className="read-about-box-values__value"
-                              key={el}
-                            >
-                              {el}
-                            </p>
-                          ))
-                        ) : (
-                          <h1>NOT CATEGORIES</h1>
-                        )}
+                        {volumeInfo?.categories?.length
+                          ? volumeInfo?.categories?.map((el) => (
+                              <p
+                                className="read-about-box-values__value"
+                                key={el}
+                              >
+                                {el}
+                              </p>
+                            ))
+                          : "NOT CATEGORIES"}
                       </div>
                     </div>
                     <div className="read-about-box">
