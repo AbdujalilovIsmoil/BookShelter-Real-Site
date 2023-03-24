@@ -28,6 +28,8 @@ $input-border-color: #F8FAFD;
     min-height: 100vh;
     width: 50%;
     overflow: auto;
+    position: relative;
+
 
     &::-webkit-scrollbar {
       background-color: $search-btn-color;
@@ -51,6 +53,10 @@ $input-border-color: #F8FAFD;
       position: absolute;
       top: 10px;
 
+      padding: {
+        bottom: 50px;
+      }
+
       min-height: 100vh;
 
       &-content {
@@ -60,7 +66,7 @@ $input-border-color: #F8FAFD;
 
         &__times {
           position: absolute;
-          right: -170%;
+          right: -130%;
           font-size: 20px;
           top: 20px;
           cursor: pointer;
@@ -84,6 +90,11 @@ $input-border-color: #F8FAFD;
         border-radius: 4px;
         background-color: $input-border-color;
 
+        margin: {
+          top: 10px;
+          bottom: 10px;
+        }
+
         padding: {
           left: 10px;
           right: 10px;
@@ -96,6 +107,12 @@ $input-border-color: #F8FAFD;
             font-weight: 600;
             font-size: 16px;
             line-height: 19px;
+            max-width: 200px;
+          }
+
+          &__author {
+            display: block;
+            max-width: 200px;
           }
 
           &__book {
@@ -115,241 +132,58 @@ $input-border-color: #F8FAFD;
   }
 }
 
-@media only screen and (max-width: 1290px) {
-  .bg-wrapper {
-    .navbar {
-      &-container {
-        &-content {
-          &__times {
-            right: -160%;
-          }
-        }
-      }
-    }
-  }
-}
-
-@media only screen and (max-width: 1240px) {
-  .bg-wrapper {
-    .navbar {
-      &-container {
-        &-content {
-          &__times {
-            right: -150%;
-          }
-        }
-      }
-    }
-  }
-}
-
-@media only screen and (max-width: 1190px) {
-  .bg-wrapper {
-    .navbar {
-      &-container {
-        &-content {
-          &__times {
-            right: -140%;
-          }
-        }
-      }
-    }
-  }
-}
-
-@media only screen and (max-width: 1140px) {
-  .bg-wrapper {
-    .navbar {
-      &-container {
-        &-content {
-          &__times {
-            right: -130%;
-          }
-        }
-      }
-    }
-  }
-}
-
-@media only screen and (max-width: 1090px) {
-  .bg-wrapper {
-    .navbar {
-      &-container {
-        &-content {
-          &__times {
-            right: -120%;
-          }
-        }
-      }
-    }
-  }
-}
-
-@media only screen and (max-width: 1060px) {
-  .bg-wrapper {
-    .navbar {
-      &-container {
-        &-content {
-          &__times {
-            right: -100%;
-          }
-        }
-      }
-    }
-  }
-}
-
-@media only screen and (max-width: 960px) {
-  .bg-wrapper {
-    .navbar {
-      &-container {
-        &-content {
-          &__times {
-            right: -80%;
-          }
-        }
-      }
-    }
-  }
-}
-
-@media only screen and (max-width: 880px) {
-  .bg-wrapper {
-    .navbar {
-      &-container {
-        &-content {
-          &__times {
-            right: -60%;
-          }
-        }
-      }
-    }
-  }
-}
-
-@media only screen and (max-width: 790px) {
-  .bg-wrapper {
-    .navbar {
-      &-container {
-        &-content {
-          &__times {
-            right: -40%;
-          }
-        }
-      }
-    }
-  }
-}
-
-@media only screen and (max-width: 720px) {
-  .bg-wrapper {
-    .navbar {
-      &-container {
-        &-content {
-          &__times {
-            right: -20%;
-          }
-        }
-      }
-    }
-  }
-}
-
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 620px) {
   .bg-wrapper {
     .navbar {
       width: 100%;
-      &-container {
-        &-content {
-          &__times {
-            right: -150%;
-          }
-        }
-      }
     }
   }
 }
+
 @media only screen and (max-width: 580px) {
   .bg-wrapper {
     .navbar {
       width: 100%;
-      &-container {
-        &-content {
-          &__times {
-            right: -130%;
-          }
-        }
-      }
     }
   }
 }
+
 @media only screen and (max-width: 540px) {
   .bg-wrapper {
     .navbar {
       width: 100%;
-      &-container {
-        &-content {
-          &__times {
-            right: -110%;
-          }
-        }
-      }
     }
   }
 }
+
 @media only screen and (max-width: 500px) {
   .bg-wrapper {
     .navbar {
       width: 100%;
-      &-container {
-        &-content {
-          &__times {
-            right: -90%;
-          }
-        }
-      }
     }
   }
 }
+
 @media only screen and (max-width: 450px) {
   .bg-wrapper {
     .navbar {
       width: 100%;
-      &-container {
-        &-content {
-          &__times {
-            right: -80%;
-          }
-        }
-      }
     }
   }
 }
+
 @media only screen and (max-width: 430px) {
   .bg-wrapper {
     .navbar {
       width: 100%;
-      &-container {
-        &-content {
-          &__times {
-            right: -60%;
-          }
-        }
-      }
     }
   }
 }
+
 @media only screen and (max-width: 390px) {
   .bg-wrapper {
     .navbar {
       width: 100%;
-      &-container {
-        &-content {
-          &__times {
-            right: -45%;
-          }
-        }
-      }
     }
   }
 }

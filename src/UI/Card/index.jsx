@@ -1,16 +1,21 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { OPEN_MODAL } from "../../components/action";
+import { OPEN_MODAL, ALL_BOOKS } from "../../components/action";
 
-const index = ({ volumeInfo }) => {
-  const { title, authors } = volumeInfo;
+const index = ({ data }) => {
+  const { id } = data;
+  const { volumeInfo } = data;
+  const { title, authors, infoLink } = volumeInfo;
+  const { books = [] } = useSelector((state) => state);
   const dispatch = useDispatch();
-  const { books } = useSelector((state) => state);
 
   const bookmarkFunctions = (items) => {
-    
     dispatch(OPEN_MODAL(true));
-    console.log(items.authors.join(""));
+    const booksIndex = books.findIndex((el) => el.id === items.id);
+
+    if (booksIndex < 0) {
+      dispatch(ALL_BOOKS(items));
+    }
   };
 
   return (
@@ -26,9 +31,7 @@ const index = ({ volumeInfo }) => {
             />
           </div>
           <div className="cards-box-content mt-4">
-            <h5 className="cards-box-content__title text-dark">
-              {volumeInfo.title}
-            </h5>
+            <h5 className="cards-box-content__title text-dark"></h5>
             <p className="cards-box-content__author mt-3 mb-4">
               {volumeInfo.authors ? volumeInfo.authors.join("") : "NOT AUTHOR"}
             </p>
@@ -41,7 +44,9 @@ const index = ({ volumeInfo }) => {
               <button
                 type="button"
                 className="cards-box-content-buttons__warning btn btn-warning text-dark shadow-sm"
-                onClick={() => bookmarkFunctions({ title, authors })}
+                onClick={() =>
+                  bookmarkFunctions({ title, authors, id, infoLink })
+                }
               >
                 Bookmark
               </button>

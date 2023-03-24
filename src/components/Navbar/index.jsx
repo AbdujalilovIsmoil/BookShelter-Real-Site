@@ -3,10 +3,10 @@ import "./Navbar.scss";
 import BookIcon from "../../assets/images/svg/navbar-icons/book.svg";
 import DeleteIcon from "../../assets/images/svg/navbar-icons/delete.svg";
 import { useSelector, useDispatch } from "react-redux";
-import { CLOSE_MODAL } from "../action";
+import { CLOSE_MODAL, DELETE_ITEM } from "../action";
 
 const index = () => {
-  const { modal } = useSelector((state) => state);
+  const { modal, books = [] } = useSelector((state) => state);
   const dispatch = useDispatch();
   let classNames = "bg-wrapper";
 
@@ -16,18 +16,27 @@ const index = () => {
     classNames += " ";
   }
 
+  const addToModal = (e) => {
+    if (
+      e.target.classList.contains("bg-wrapper") ||
+      e.target.classList.contains("navbar")
+    ) {
+      dispatch(CLOSE_MODAL(false));
+    }
+  };
+
+  const deleteItem = (id) => {
+    const filtered = books.filter((el) => el.id !== id);
+    dispatch(DELETE_ITEM(filtered));
+  };
+
   return (
     <>
-      <div className={classNames}>
+      <div className={classNames} onClick={(e) => addToModal(e)}>
         <section className="navbar bg-light">
           <div className="container">
             <div className="navbar-container bg-light">
               <div className="navbar-container-content">
-                <i
-                  onClick={() => dispatch(CLOSE_MODAL(false))}
-                  className="navbar-container-content__times fa fa-times"
-                  id="closeNavbar"
-                ></i>
                 <h4 className="navbar-container-content__title text-dark">
                   Bookmarks
                 </h4>
@@ -35,26 +44,42 @@ const index = () => {
                   If you don’t like to read, you haven’t found the right book
                 </p>
               </div>
-              <div className="navbar-container-card d-flex align-items-center justify-content-between">
-                <div className="navbar-container-card-box">
-                  <h6 className="navbar-container-card-box__title">Python</h6>
-                  <small className="navbar-container-card-box__author">
-                    David M. Beazley
-                  </small>
-                </div>
-                <div className="navbar-container-card-box">
-                  <img
-                    src={BookIcon}
-                    alt="book"
-                    className="navbar-container-card-box__book"
-                  />
-                  <img
-                    src={DeleteIcon}
-                    alt="delete"
-                    className="navbar-container-card-box__delete"
-                  />
-                </div>
-              </div>
+              {books.length ? (
+                books.map((el) => (
+                  <div
+                    className="navbar-container-card d-flex align-items-center justify-content-between"
+                    key={el.id}
+                  >
+                    <div className="navbar-container-card-box">
+                      <h6 className="navbar-container-card-box__title">
+                        {el.title ? el.title : "TITLE IS NOT DEFINED"}
+                      </h6>
+                      <small className="navbar-container-card-box__author">
+                        {el.authors
+                          ? el.authors.join("")
+                          : "AUTHOR IS NOT DEFINED"}
+                      </small>
+                    </div>
+                    <div className="navbar-container-card-box">
+                      <a href={el.infoLink} target="_blank">
+                        <img
+                          src={BookIcon}
+                          alt="book"
+                          className="navbar-container-card-box__book"
+                        />
+                      </a>
+                      <img
+                        onClick={() => deleteItem(el.id)}
+                        src={DeleteIcon}
+                        alt="delete"
+                        className="navbar-container-card-box__delete"
+                      />
+                    </div>
+                  </div>
+                ))
+              ) : (
+                <h3>NOT BOOKS</h3>
+              )}
             </div>
           </div>
         </section>

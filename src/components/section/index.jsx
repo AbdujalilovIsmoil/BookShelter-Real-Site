@@ -6,7 +6,6 @@ import { Loader } from "../index";
 
 const index = () => {
   const { data, loader } = useSelector((state) => state);
-  console.log(data);
   return (
     <>
       <section className="cards mt-5">
@@ -15,7 +14,7 @@ const index = () => {
             {loader ? (
               <Loader />
             ) : data?.items?.length ? (
-              data?.items?.map((el) => <Card key={el.id} {...el} />)
+              data?.items?.map((el) => <Card key={el.id} data={el} />)
             ) : (
               <h1 className="text-center mt-5">NOT FOUND</h1>
             )}

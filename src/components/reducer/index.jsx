@@ -63,6 +63,11 @@ export const reducer = (state = initialState, action) => {
         ...state,
         books: [...state.books, action.payload]
       };
+    case "DELETE_ITEM":
+      return {
+        ...state,
+        books: action.payload
+      };
     default:
       return state;
   }

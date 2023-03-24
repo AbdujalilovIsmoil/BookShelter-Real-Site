@@ -66,3 +66,10 @@ export const ALL_BOOKS = (value) => {
     payload: value
   };
 };
+
+export const DELETE_ITEM = (value) => {
+  return {
+    type: "DELETE_ITEM",
+    payload: value
+  };
+};
