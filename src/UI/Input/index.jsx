@@ -1,6 +1,13 @@
 import React from "react";
 
-const index = ({ type, className, placeholder, value, onChange }) => {
+const index = ({
+  type,
+  className,
+  placeholder,
+  value,
+  onChange,
+  onKeyDown
+}) => {
   return (
     <>
       <input
@@ -9,6 +16,7 @@ const index = ({ type, className, placeholder, value, onChange }) => {
         placeholder={placeholder}
         value={value}
         onChange={onChange}
+        onKeyDown={onKeyDown}
       />
     </>
   );

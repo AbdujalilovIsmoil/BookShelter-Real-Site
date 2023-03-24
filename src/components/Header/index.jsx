@@ -4,6 +4,7 @@ import Logo from "../../assets/images/svg/intro/intro.svg";
 import { useNavigate, Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { SEARCH_INPUT, SEARCH_DATA, LOADER } from "../action";
+import { Input, Button } from "../../UI/index";
 
 const index = () => {
   const navigate = useNavigate();
@@ -53,25 +54,25 @@ const index = () => {
             <div className="nav-form">
               <label htmlFor="#" className="nav-form-label">
                 <i className="nav-form-label__icon fa fa-search"></i>
-                <input
+                <Input
                   type="text"
                   className="nav-form-label__search"
                   placeholder="Search books"
                   value={search}
-                  onKeyDown={(e) => searchFunction(e)}
                   onChange={(e) => dispatch(SEARCH_INPUT(e.target.value))}
+                  onKeyDown={(e) => searchFunction(e)}
                 />
               </label>
             </div>
             <div className="nav-contact align-items-center gap-4 d-xxl-flex d-xl-flex d-lg-block d-md-block d-sm-block d-block mx-xxl-0 mx-xl-0 mx-lg-auto mx-md-auto mx-sm-auto mx-auto text-xxl-end text-xl-end text-lg-center text-md-center text-sm-center text-center mt-xxl-0 mt-xl-0 mt-lg-0 mt-md-3 mt-sm-3 mt-3">
               <i className="fa fa-sun nav-contact__sun d-block mb-xxl-0 mb-xl-0 mb-lg-2 mb-md-2 mb-sm-2 mb-2"></i>
-              <button
+              <Button
                 type="button"
                 className="nav-contact__btn btn btn-info text-light shadow-sm"
                 onClick={logoutFunction}
               >
                 Logout
-              </button>
+              </Button>
             </div>
           </nav>
         </div>

@@ -6,6 +6,7 @@ import {
   OPEN_READ_MODAL,
   FILTER_DATA
 } from "../../components/action";
+import { Button } from "../index";
 
 const index = ({ datas }) => {
   const { id } = datas;
@@ -52,7 +53,7 @@ const index = ({ datas }) => {
           </div>
           <div className="cards-box-content-buttons">
             <div className="wrapper-flex d-flex justify-content-between">
-              <button
+              <Button
                 type="button"
                 className="cards-box-content-buttons__warning btn btn-warning text-dark shadow-sm"
                 onClick={() =>
@@ -60,7 +61,7 @@ const index = ({ datas }) => {
                 }
               >
                 Bookmark
-              </button>
+              </Button>
               <a
                 href={volumeInfo.infoLink ? volumeInfo.infoLink : "#"}
                 target="_blank"
@@ -70,14 +71,14 @@ const index = ({ datas }) => {
                 More Info
               </a>
             </div>
-            <button
+            <Button
               type="button"
               className="shadow-sm fw-bold cards-box-content-buttons__read text-light border border-secondary rounded-1 mt-2"
               onClick={(e) => openReadModal(e)}
               data-id={id}
             >
               Read
-            </button>
+            </Button>
           </div>
         </div>
       </div>

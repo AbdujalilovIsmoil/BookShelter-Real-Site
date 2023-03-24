@@ -1,9 +1,9 @@
 import React from "react";
 
-const index = ({ type, className, children }) => {
+const index = ({ type, className, children, onClick }) => {
   return (
     <>
-      <button type={type} className={className}>
+      <button type={type} className={className} onClick={onClick}>
         {children}
       </button>
     </>
