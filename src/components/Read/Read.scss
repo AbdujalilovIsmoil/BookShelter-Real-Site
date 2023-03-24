@@ -79,6 +79,7 @@ $btn-group: #FFFFFF;
       margin: {
         top: 45px;
       }
+
       &__book {
         height: 300px;
         object-fit: cover;
@@ -175,6 +176,142 @@ $btn-group: #FFFFFF;
         &:hover {
           background-color: transparent;
           color: $btn-bg-color !important;
+        }
+      }
+    }
+  }
+}
+
+
+@media only screen and (max-width: 1350px) {
+  .bg {
+    .read {
+      left: 55%;
+    }
+  }
+}
+
+@media only screen and (max-width: 1230px) {
+  .bg {
+    .read {
+      left: 50%;
+    }
+  }
+}
+
+@media only screen and (max-width: 1100px) {
+  .bg {
+    .read {
+      left: 45%;
+    }
+  }
+}
+
+@media only screen and (max-width: 1000px) {
+  .bg {
+    .read {
+      left: 40%;
+    }
+  }
+}
+
+@media only screen and (max-width: 930px) {
+  .bg {
+    .read {
+      left: 35%;
+    }
+  }
+}
+
+@media only screen and (max-width: 850px) {
+  .bg {
+    .read {
+      left: 30%;
+    }
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  .bg {
+    .read {
+      left: 25%;
+    }
+  }
+}
+
+@media only screen and (max-width: 750px) {
+  .bg {
+    .read {
+      left: 20%;
+    }
+  }
+}
+
+@media only screen and (max-width: 700px) {
+  .bg {
+    .read {
+      left: 15%;
+    }
+  }
+}
+
+@media only screen and (max-width: 650px) {
+  .bg {
+    .read {
+      left: 10%;
+    }
+  }
+}
+
+@media only screen and (max-width: 630px) {
+  .bg {
+    .read {
+      left: 5%;
+    }
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .bg {
+    .read {
+      left: 0;
+    }
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  .bg {
+    .read {
+      left: 0;
+
+      &-header {
+        padding: {
+          left: 15px;
+          right: 15px;
+        }
+        &__title {
+          font-size: 18px;
+        }
+      }
+
+      &-content {
+        padding: {
+          left: 20px;
+          right: 20px;
+        }
+      }
+
+      &-about {
+        padding: {
+          left: 20px;
+          right: 20px;
+        }
+      }
+
+      &-body {
+        padding: {
+          left: 20px;
+          right: 20px;
         }
       }
     }
