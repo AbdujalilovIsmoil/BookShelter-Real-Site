@@ -14,7 +14,7 @@ const index = () => {
             {loader ? (
               <Loader />
             ) : data?.items?.length ? (
-              data?.items?.map((el) => <Card key={el.id} data={el} />)
+              data?.items?.map((el) => <Card key={el.id} datas={el} />)
             ) : (
               <h1 className="text-center mt-5">NOT FOUND</h1>
             )}

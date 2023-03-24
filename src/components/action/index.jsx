@@ -73,3 +73,17 @@ export const DELETE_ITEM = (value) => {
     payload: value
   };
 };
+
+export const OPEN_READ_MODAL = (value) => {
+  return {
+    type: "OPEN_READ_MODAL",
+    payload: value
+  };
+};
+
+export const FILTER_DATA = (data) => {
+  return {
+    type: "FILTER_DATA",
+    payload: data
+  };
+};

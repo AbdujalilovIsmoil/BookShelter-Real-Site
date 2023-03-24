@@ -1,12 +1,17 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { OPEN_MODAL, ALL_BOOKS } from "../../components/action";
+import {
+  OPEN_MODAL,
+  ALL_BOOKS,
+  OPEN_READ_MODAL,
+  FILTER_DATA
+} from "../../components/action";
 
-const index = ({ data }) => {
-  const { id } = data;
-  const { volumeInfo } = data;
+const index = ({ datas }) => {
+  const { id } = datas;
+  const { volumeInfo } = datas;
   const { title, authors, infoLink } = volumeInfo;
-  const { books = [] } = useSelector((state) => state);
+  const { books = [], data } = useSelector((state) => state);
   const dispatch = useDispatch();
 
   const bookmarkFunctions = (items) => {
@@ -16,6 +21,12 @@ const index = ({ data }) => {
     if (booksIndex < 0) {
       dispatch(ALL_BOOKS(items));
     }
+  };
+
+  const openReadModal = (e) => {
+    const filterData = data.items.find((el) => el.id === e.target.dataset.id);
+    dispatch(FILTER_DATA(filterData));
+    dispatch(OPEN_READ_MODAL(true));
   };
 
   return (
@@ -62,6 +73,8 @@ const index = ({ data }) => {
             <button
               type="button"
               className="shadow-sm fw-bold cards-box-content-buttons__read text-light border border-secondary rounded-1 mt-2"
+              onClick={(e) => openReadModal(e)}
+              data-id={id}
             >
               Read
             </button>

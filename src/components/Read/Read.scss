@@ -14,11 +14,11 @@ $btn-group: #FFFFFF;
   z-index: 3;
   position: fixed;
   overflow: auto;
-  right: 100%;
+  left: 100%;
   transition: all .3s linear;
 
   &.active {
-    right: 0;
+    left: 0;
   }
 
   &::-webkit-scrollbar {
@@ -62,9 +62,10 @@ $btn-group: #FFFFFF;
 
       &__title {
         font-weight: 500;
-        font-size: 24px;
-        line-height: 28px;
+        font-size: 22px;
+        line-height: 25px;
         color: $title-color;
+        max-width: 300px;
       }
 
       &__times {
@@ -77,6 +78,10 @@ $btn-group: #FFFFFF;
     &-book {
       margin: {
         top: 45px;
+      }
+      &__book {
+        height: 300px;
+        object-fit: cover;
       }
     }
 

@@ -6,7 +6,9 @@ const initialState = {
   data: [],
   loader: true,
   modal: false,
-  books: []
+  books: [],
+  read: false,
+  filterData: []
 };
 
 export const reducer = (state = initialState, action) => {
@@ -67,6 +69,16 @@ export const reducer = (state = initialState, action) => {
       return {
         ...state,
         books: action.payload
+      };
+    case "OPEN_READ_MODAL":
+      return {
+        ...state,
+        read: action.payload
+      };
+    case "FILTER_DATA":
+      return {
+        ...state,
+        filterData: [action.payload]
       };
     default:
       return state;
