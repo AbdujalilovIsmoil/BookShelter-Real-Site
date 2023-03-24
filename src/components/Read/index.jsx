@@ -58,21 +58,25 @@ const index = () => {
                     <div className="read-about-box">
                       <p className="read-about-box__key">Author:</p>
                       <div className="read-about-box-values">
-                        {volumeInfo?.authors?.length
-                          ? volumeInfo?.authors?.map((el) => (
-                              <p
-                                className="read-about-box-values__value"
-                                key={el}
-                              >
-                                {el}
-                              </p>
-                            ))
-                          : "NOT AUTHOR"}
+                        {volumeInfo?.authors?.length ? (
+                          volumeInfo?.authors?.map((el) => (
+                            <p
+                              className="read-about-box-values__value"
+                              key={el}
+                            >
+                              {el}
+                            </p>
+                          ))
+                        ) : (
+                          <p className="read-about-box-values__value" key={el}>
+                            NOT AUTHOR
+                          </p>
+                        )}
                       </div>
                     </div>
                     <div className="read-about-box">
                       <p className="read-about-box__key">Published: </p>
-                      <div className="read-about-box-values">
+                      <div className="read-about-box-values  d-flex align-items-center">
                         <p className="read-about-box-values__value">
                           {volumeInfo?.publishedDate
                             ? volumeInfo?.publishedDate
@@ -82,7 +86,7 @@ const index = () => {
                     </div>
                     <div className="read-about-box">
                       <p className="read-about-box__key">Publishers: </p>
-                      <div className="read-about-box-values">
+                      <div className="read-about-box-values  d-flex align-items-center">
                         <p className="read-about-box-values__value">
                           {volumeInfo?.publisher
                             ? volumeInfo?.publisher
@@ -92,22 +96,26 @@ const index = () => {
                     </div>
                     <div className="read-about-box">
                       <p className="read-about-box__key">Categories: </p>
-                      <div className="read-about-box-values">
-                        {volumeInfo?.categories?.length
-                          ? volumeInfo?.categories?.map((el) => (
-                              <p
-                                className="read-about-box-values__value"
-                                key={el}
-                              >
-                                {el}
-                              </p>
-                            ))
-                          : "NOT CATEGORIES"}
+                      <div className="read-about-box-values  d-flex align-items-center">
+                        {volumeInfo?.categories?.length ? (
+                          volumeInfo?.categories?.map((el) => (
+                            <p
+                              className="read-about-box-values__value"
+                              key={el}
+                            >
+                              {el}
+                            </p>
+                          ))
+                        ) : (
+                          <p className="read-about-box-values__value">
+                            NOT CATEGORIES
+                          </p>
+                        )}
                       </div>
                     </div>
                     <div className="read-about-box">
                       <p className="read-about-box__key">Pages Count: </p>
-                      <div className="read-about-box-values">
+                      <div className="read-about-box-values  d-flex align-items-center">
                         <p className="read-about-box-values__value">
                           {volumeInfo.pageCount
                             ? volumeInfo.pageCount
