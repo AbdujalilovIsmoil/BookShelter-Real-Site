@@ -9,7 +9,7 @@ const index = () => {
   const getLoginValues = JSON.parse(localStorage.getItem("login")) || [];
   const navigate = useNavigate();
 
-  if (!getRegistrationValues.username && !getRegistrationValues.password) {
+  if (!getRegistrationValues.username || !getRegistrationValues.password) {
     useEffect(() => {
       navigate("/registration");
     }, []);
@@ -18,6 +18,12 @@ const index = () => {
   if (!getLoginValues.email && !getLoginValues.password) {
     useEffect(() => {
       navigate("/login");
+    }, []);
+  }
+
+  if (getLoginValues && getRegistrationValues) {
+    useEffect(() => {
+      navigate("/");
     }, []);
   }
 

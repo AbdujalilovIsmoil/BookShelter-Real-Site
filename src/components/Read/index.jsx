@@ -15,7 +15,6 @@ const index = () => {
     classNames += " ";
     document.body.classList.remove("active");
   }
-
   const closeReadModal = () => {
     dispatch(OPEN_READ_MODAL(false));
   };
@@ -23,13 +22,14 @@ const index = () => {
     <>
       <div className={classNames}>
         <div className="container">
-          {filterData.length ? (
-            filterData.map((el) => {
-              const { volumeInfo } = el;
+          {filterData?.length ? (
+            filterData?.map((el) => {
               return (
                 <div className="read" key={el.id}>
                   <div className="read-header d-flex justify-content-between align-items-center">
-                    <h4 className="read-header__title">{volumeInfo.title}</h4>
+                    <h4 className="read-header__title">
+                      {el.volumeInfo.title}
+                    </h4>
                     <i
                       className="read-header__times fa fa-times"
                       onClick={() => closeReadModal()}
@@ -38,8 +38,8 @@ const index = () => {
                   <div className="read-book d-flex justify-content-center">
                     <img
                       src={
-                        volumeInfo?.imageLinks.smallThumbnail
-                          ? volumeInfo?.imageLinks.smallThumbnail
+                        el.volumeInfo?.imageLinks.smallThumbnail
+                          ? el.volumeInfo?.imageLinks.smallThumbnail
                           : "https://picsum.photos/100"
                       }
                       alt="book"
@@ -49,8 +49,8 @@ const index = () => {
                   </div>
                   <div className="read-content">
                     <p className="read-content__text">
-                      {volumeInfo.description
-                        ? volumeInfo.description
+                      {el?.volumeInfo.description
+                        ? el?.volumeInfo.description
                         : "NOT DESCRIPTION"}
                     </p>
                   </div>
@@ -58,8 +58,8 @@ const index = () => {
                     <div className="read-about-box">
                       <p className="read-about-box__key">Author:</p>
                       <div className="read-about-box-values">
-                        {volumeInfo?.authors?.length ? (
-                          volumeInfo?.authors?.map((el) => (
+                        {el.volumeInfo?.authors?.length ? (
+                          el.volumeInfo?.authors?.map((el) => (
                             <p
                               className="read-about-box-values__value"
                               key={el}
@@ -78,8 +78,8 @@ const index = () => {
                       <p className="read-about-box__key">Published: </p>
                       <div className="read-about-box-values  d-flex align-items-center">
                         <p className="read-about-box-values__value">
-                          {volumeInfo?.publishedDate
-                            ? volumeInfo?.publishedDate
+                          {el.volumeInfo?.publishedDate
+                            ? el.volumeInfo?.publishedDate
                             : "NOT PUBLISHED-DATE"}
                         </p>
                       </div>
@@ -88,8 +88,8 @@ const index = () => {
                       <p className="read-about-box__key">Publishers: </p>
                       <div className="read-about-box-values  d-flex align-items-center">
                         <p className="read-about-box-values__value">
-                          {volumeInfo?.publisher
-                            ? volumeInfo?.publisher
+                          {el.volumeInfo?.publisher
+                            ? el.volumeInfo?.publisher
                             : "NOT PUBLISHER"}
                         </p>
                       </div>
@@ -97,8 +97,8 @@ const index = () => {
                     <div className="read-about-box">
                       <p className="read-about-box__key">Categories: </p>
                       <div className="read-about-box-values  d-flex align-items-center">
-                        {volumeInfo?.categories?.length ? (
-                          volumeInfo?.categories?.map((el) => (
+                        {el.volumeInfo?.categories?.length ? (
+                          el.volumeInfo?.categories?.map((el) => (
                             <p
                               className="read-about-box-values__value"
                               key={el}
@@ -117,8 +117,8 @@ const index = () => {
                       <p className="read-about-box__key">Pages Count: </p>
                       <div className="read-about-box-values  d-flex align-items-center">
                         <p className="read-about-box-values__value">
-                          {volumeInfo.pageCount
-                            ? volumeInfo.pageCount
+                          {el.volumeInfo.pageCount
+                            ? el.volumeInfo.pageCount
                             : "NOT PAGE-COUNT"}
                         </p>
                       </div>
@@ -126,8 +126,9 @@ const index = () => {
                   </div>
                   <div className="read-body d-flex justify-content-end py-4">
                     <a
-                      href={volumeInfo.infoLink ? volumeInfo.infoLink : "#"}
-                      target="_blank"
+                      href={
+                        el.volumeInfo.infoLink ? el.volumeInfo.infoLink : "#"
+                      }
                     >
                       <button className="read-body__btn text-light">
                         Read

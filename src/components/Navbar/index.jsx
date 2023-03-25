@@ -61,7 +61,7 @@ const index = () => {
                       </small>
                     </div>
                     <div className="navbar-container-card-box">
-                      <a href={el.infoLink} target="_blank">
+                      <a href={el.infoLink}>
                         <img
                           src={BookIcon}
                           alt="book"

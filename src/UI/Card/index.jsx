@@ -25,7 +25,7 @@ const index = ({ datas }) => {
   };
 
   const openReadModal = (e) => {
-    const filterData = data.items.find((el) => el.id === e.target.dataset.id);
+    const filterData = data.items.find((el) => el.id === e.target.id);
     dispatch(FILTER_DATA(filterData));
     dispatch(OPEN_READ_MODAL(true));
   };
@@ -36,14 +36,16 @@ const index = ({ datas }) => {
         <div className="cards-box">
           <div className="cards-box-bg">
             <img
-              src={volumeInfo?.imageLinks?.thumbnail}
+              src={volumeInfo.imageLinks?.thumbnail}
               alt="card"
               title="card"
               className="cards-box-bg__img"
             />
           </div>
           <div className="cards-box-content mt-4">
-            <h5 className="cards-box-content__title text-dark"></h5>
+            <h5 className="cards-box-content__title text-dark">
+              {volumeInfo.title}
+            </h5>
             <p className="cards-box-content__author mt-3 mb-4">
               {volumeInfo.authors ? volumeInfo.authors.join("") : "NOT AUTHOR"}
             </p>
@@ -57,14 +59,18 @@ const index = ({ datas }) => {
                 type="button"
                 className="cards-box-content-buttons__warning btn btn-warning text-dark shadow-sm"
                 onClick={() =>
-                  bookmarkFunctions({ title, authors, id, infoLink })
+                  bookmarkFunctions({
+                    title,
+                    authors,
+                    id,
+                    infoLink
+                  })
                 }
               >
                 Bookmark
               </Button>
               <a
                 href={volumeInfo.infoLink ? volumeInfo.infoLink : "#"}
-                target="_blank"
                 type="button"
                 className="cards-box-content-buttons__info btn shadow-sm fw-bold text-primary"
               >
@@ -74,8 +80,8 @@ const index = ({ datas }) => {
             <Button
               type="button"
               className="shadow-sm fw-bold cards-box-content-buttons__read text-light border border-secondary rounded-1 mt-2"
+              id={id}
               onClick={(e) => openReadModal(e)}
-              data-id={id}
             >
               Read
             </Button>
