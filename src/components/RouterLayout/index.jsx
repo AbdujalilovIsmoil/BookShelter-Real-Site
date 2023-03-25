@@ -21,12 +21,6 @@ const index = () => {
     }, []);
   }
 
-  if (getLoginValues && getRegistrationValues) {
-    useEffect(() => {
-      navigate("/");
-    }, []);
-  }
-
   return (
     <>
       <LayoutFolder />
